@@ -11,10 +11,10 @@ defmodule Pet.Mixfile do
   end
 
   def application do
-    [applications: [:logger, :yamerl]]
+    [applications: [:logger]]
   end
 
   defp deps do
-    [{:yamerl, github: "yakaz/yamerl"}]
+    [{:yomel, "~> 0.2"}]
   end
 end
