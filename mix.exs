@@ -20,7 +20,11 @@ defmodule Pet.Mixfile do
   end
 
   defp deps do
-    [{:yomel, "~> 0.2"}]
+    [
+      {:yomel,   "~> 0.2"},
+      {:earmark, "~> 0.1", only: :dev},
+      {:ex_doc,  "~> 0.7", only: :dev}
+    ]
   end
 
   defp description do
