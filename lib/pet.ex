@@ -1,8 +1,13 @@
 defmodule Pet do
   use GenServer
 
-  def new(config \\ []) do
-    GenServer.start_link(__MODULE__, config)
+  def start_link(config \\ []) do
+    case Keyword.pop(config, :name) do
+      {nil, config} ->
+        GenServer.start_link(__MODULE__, config)
+      {name, config} ->
+        GenServer.start_link(__MODULE__, config, name: name)
+    end
   end
 
   def get(pid, key) do
